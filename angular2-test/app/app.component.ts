@@ -6,11 +6,11 @@ import {AuthService} from './auth.service';
 @Component({
     selector: 'my-app',
     template: `
-        <div>
-            <h1>Angular App Test</h1>
-            <master></master>
-            <detail></detail>
-        </div>
+        <h1>Angular App Test</h1>
+        <div class="row">
+            <div class="column"><master></master></div>
+            <div class="column"><detail></detail></div>
+       </div>
     `
 })
 export class AppComponent {

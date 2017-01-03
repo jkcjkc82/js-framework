@@ -23,9 +23,9 @@ function saveData(key, value) {
 
 export default Ember.Service.extend({
     getAccessToken: function() {
-        return loadData('access_token')
+        return loadData('access_token');
     },
     saveAccessToken: function(access_token) {
-        saveData('access_token', access_token)
+        saveData('access_token', access_token);
     }
 });

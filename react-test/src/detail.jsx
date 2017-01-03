@@ -24,7 +24,8 @@ class Detail extends React.Component {
         const {access_token} = this.props.auth;
 
         return (
-            <div>
+            <div className="column">
+                <h3>Detail</h3>
                 {access_token ?
                     (<a className="button" onClick={this._logout.bind(this)}>Logout</a> ) :
                     (<a className="button" onClick={this._login.bind(this)}>Login</a>)

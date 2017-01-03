@@ -1,14 +1,13 @@
-import Global from '../utils/global.js';
-import {saveData} from '../utils/localstorage.js';
+import {AuthModel} from '../models/auth.js';
 
 const CurrentTemplate = `
-    <div>
-        <% if(access_token) { %>
-        <a class="button" href="#">Logout</a>
-        <% } else { %>
-        <a class="button" href="#">Login</a>
-        <% } %>
-    </div>
+    <h3>Detail</h3>
+
+    <% if(access_token) { %>
+    <a class="button" href="#">Logout</a>
+    <% } else { %>
+    <a class="button" href="#">Login</a>
+    <% } %>
 `;
 
 const DetailView = Backbone.View.extend({
@@ -16,6 +15,9 @@ const DetailView = Backbone.View.extend({
     events: {
         'click .button:contains("Login")': 'login',
         'click .button:contains("Logout")': 'logout'
+    },
+    initialize: function() {
+        this.authModel = new AuthModel();
     },
     login: function() {
         const para = {
@@ -27,11 +29,13 @@ const DetailView = Backbone.View.extend({
             `https://www.dropbox.com/1/oauth2/authorize?${$.param(para)}`;
     },
     logout: function() {
-        saveData('access_token', '');
+        this.authModel.saveAccessToken('')
         location.reload();
     },
     render: function() {
-        this.$el.html(this.template(Global.attributes));
+        this.$el.html(this.template({
+            access_token: this.authModel.loadAccessToken()
+        }));
         return this;
     }
 });

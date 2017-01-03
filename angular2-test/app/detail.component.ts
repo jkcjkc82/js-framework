@@ -6,10 +6,9 @@ import {AuthService} from './auth.service';
 @Component({
     selector: 'detail',
     template: `
-        <div>
-            <a class="button" (click)="onLogout()" *ngIf="access_token">Logout</a>
-            <a class="button" (click)="onLogin()" *ngIf="!access_token">Login</a>
-        </div>
+        <h3>Detail</h3>
+        <a class="button" (click)="onLogout()" *ngIf="access_token">Logout</a>
+        <a class="button" (click)="onLogin()" *ngIf="!access_token">Login</a>
     `,
 })
 export class DetailComponent {

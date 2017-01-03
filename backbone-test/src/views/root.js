@@ -3,8 +3,10 @@ import DetailView from './detail.js';
 
 const CurrentTemplate = `
     <h1>Backbone App Test</h1>
-    <div id="Master"></div>
-    <div id="Detail"></div>
+    <div class="row">
+        <div id="Master" class="column"></div>
+        <div id="Detail" class="column"></div>
+    </div>
 `;
 
 const RootView = Backbone.View.extend({
@@ -12,12 +14,18 @@ const RootView = Backbone.View.extend({
     template: _.template(CurrentTemplate),
     initialize: function() {
         this.$el.html(this.template());
-        this.master = new MasterView({el: this.$('#Master')});
-        this.detail = new DetailView({el: this.$('#Detail')});
+
+        this.master = new MasterView({
+            el: this.$('#Master')
+        });
+        this.detail = new DetailView({
+            el: this.$('#Detail')
+        });
     },
     render: function() {
         this.master.render();
         this.detail.render();
+
         return this;
     }
 });

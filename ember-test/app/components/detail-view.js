@@ -6,12 +6,13 @@ export default Ember.Component.extend({
     access_token: '',
     init: function() {
         this._super(...arguments);
-        this.set('access_token', this.get('auth').getAccessToken())
+
+        this.set('access_token', this.get('auth').getAccessToken());
     },
     actions: {
         logout: function() {
-            this.get('auth').saveAccessToken('')
-            location.reload()
+            this.get('auth').saveAccessToken('');
+            location.reload();
         },
         login: function() {
             const para = {

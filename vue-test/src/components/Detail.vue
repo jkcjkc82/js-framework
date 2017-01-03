@@ -1,7 +1,8 @@
 <template>
-    <div>
-        <a v-show="access_token" class="button" v-on:click="logout">Logout</a>
-        <a v-show="!access_token" class="button" v-on:click="login">Login</a>
+    <div class="column">
+        <h3>Detail</h3>
+        <a v-if="access_token" class="button" v-on:click="logout">Logout</a>
+        <a v-if="!access_token" class="button" v-on:click="login">Login</a>
     </div>
 </template>
 

@@ -1,11 +1,11 @@
-import {FilesModel, FilesCollection} from '../models/files.js';
+import {FilesCollection} from '../models/files.js';
+import {AuthModel} from '../models/auth.js';
 import ItemView from './item.js';
 
 const CurrentTemplate = `
-    <div>
-        <h3>Master</h3>
-        <ul></ul>
-    </div>
+    <h3>Master</h3>
+
+    <ul></ul>
 `;
 
 const MasterView = Backbone.View.extend({
@@ -13,12 +13,16 @@ const MasterView = Backbone.View.extend({
     initialize: function() {
         this.$el.html(this.template());
 
+        const authModel = new AuthModel();
         const filesCollection = new FilesCollection();
+
         filesCollection.on({
             'add': this.addOne.bind(this)
         });
 
-        filesCollection.fetch();
+        if(authModel.loadAccessToken()) {
+            filesCollection.fetch();
+        }
     },
     addOne: function(model) {
         const view = new ItemView({

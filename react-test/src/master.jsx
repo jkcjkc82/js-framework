@@ -35,9 +35,12 @@ class Master extends React.Component {
     }
     render() {
         return (
-            <ul>
-                {this._renderItem()}
-            </ul>
+            <div className="column">
+                <h3>Master</h3>
+                <ul>
+                    {this._renderItem()}
+                </ul>
+            </div>
         );
     }
 }

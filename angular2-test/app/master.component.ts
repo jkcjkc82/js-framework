@@ -4,6 +4,7 @@ import {DropboxService} from './dropbox.service';
 @Component({
     selector: 'master',
     template: `
+        <h3>Master</h3>
         <ul>
             <li *ngFor="let folder of folders">{{folder.name}}</li>
         </ul>

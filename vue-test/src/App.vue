@@ -1,8 +1,10 @@
 <template>
     <div>
         <h1>Vue Test App</h1>
-        <master />
-        <detail />
+        <div class="row">
+            <master />
+            <detail />
+        </div>
     </div>
 </template>
 

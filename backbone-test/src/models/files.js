@@ -1,17 +1,3 @@
-// const _sync = Backbone.sync
-// Backbone.sync = function(method, model, options) {
-//   console.log(method + ": " + model.url, model, options);
-//   _sync.call( this, method, model, options )
-// };
-
-
-
-const FilesModel = Backbone.Model.extend({
-    urlRoot: 'https://api.dropboxapi.com/2/files/list_folder----model',
-    defaults: {
-    }
-});
-
 const FilesCollection = Backbone.Collection.extend({
     url: 'https://api.dropboxapi.com/2/files/list_folder',
     sync: function(method, model, options) {
@@ -35,5 +21,5 @@ const FilesCollection = Backbone.Collection.extend({
     }
 });
 export {
-    FilesModel, FilesCollection
+    FilesCollection
 };

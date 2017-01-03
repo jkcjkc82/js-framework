@@ -12,6 +12,6 @@ cd vue-test
 # 기본 패키지 설치
 npm install
 
-# 개발환경 실행
+# 개발환경 실행 : http://localhost:8080/
 npm run dev
 ```

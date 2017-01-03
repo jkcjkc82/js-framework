@@ -11,8 +11,12 @@ class AppProvider extends React.Component {
         return (
             <Provider store={store}>
                 <div>
-                    <MasterView />
-                    <DetailView />
+                    <h1>React App Test</h1>
+
+                    <div className="row">
+                        <MasterView />
+                        <DetailView />
+                    </div>
                 </div>
             </Provider>
         );
