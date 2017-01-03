@@ -1,0 +1,7 @@
+<div>
+    {{#if access_token}}
+        <a class="button" href="#" onclick={{action 'logout'}}>Logout</a>
+    {{else}}
+        <a class="button" href="#" onclick={{action 'login'}}>Login</a>
+    {{/if}}
+</div>
