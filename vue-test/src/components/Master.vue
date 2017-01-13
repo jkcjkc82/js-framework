@@ -27,7 +27,7 @@ export default {
 <style scoped>
 li {
     font-size: 14pt;
-    color: white;
-    background-color: #000;
+    color: black;
+    background-color: #FFF;
 }
 </style>
